@@ -11,6 +11,7 @@ common tools and configs enables a smoother remote pairing process.
 - vim - highly configurable text editor
 - [gitsh](https://github.com/thoughtbot/gitsh) - interactive shell for git
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
+- [jshint](http://jshint.com/install/) - syntax checking for javascript
 
 ## Getting started
 
