@@ -29,6 +29,11 @@ echo 'DOTFILES_DIRS="~/context-dotfiles"' > ~/.rcrc
 ```
 rcup
 ```
+1. Install Vim Plugins
+
+```
+:VundleInstall
+```
 
 ## Basic commands
 
@@ -38,12 +43,23 @@ rcup
 - Attach to already existing api and admin sessions:
   `tmux attach-session -t admin -t api`
 
+## Vim Configs
+
+We use Vundle to manage plugins for vim. You can find a list of plugins in
+[vim/vundles](vim/vundles). You can add more plugins here to share with the team
+or you can add personal plugins in your own `~/.vim/vundles.local`.
+All config files are in `vim/configs`. Add personal configs by
+just adding a new file to the folder. Add shared configs by editing an existing
+file or adding a new file and commiting it to this repo.
+
 ## Update your local dotfiles
 
 1. Pull the lastest changes to this repo
  `cd ~/context-dotfile; git pull origin master`
 1. Run rcup
   `rcup`
+1. Install the lastest plugins in vim
+  `:VundleInstall`
 
 ## Contributing to dotfiles
 
