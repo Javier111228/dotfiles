@@ -12,6 +12,7 @@ common tools and configs enables a smoother remote pairing process.
 - [gitsh](https://github.com/thoughtbot/gitsh) - interactive shell for git
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
 - [jshint](http://jshint.com/install/) - syntax checking for javascript
+- [powerline fonts](https://powerline.readthedocs.io/en/master/installation.html#installation-on-various-platforms) - Fonts for an awesome vim status bar
 
 ## Getting started
 
