@@ -13,7 +13,7 @@ common tools and configs enables a smoother remote pairing process.
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
 - [jshint](http://jshint.com/install/) - syntax checking for javascript
 - [powerline fonts](https://powerline.readthedocs.io/en/master/installation.html#installation-on-various-platforms) - Fonts for an awesome vim status bar
-- [ag/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) - AG/The Silver Searcher for faster in-project searching
+- [ag/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) - for faster in-project searching
 - [vundle](https://github.com/VundleVim/Vundle.vim) - Vim package manager
 
 ## Getting started
