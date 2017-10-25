@@ -1,6 +1,6 @@
 # Dotfiles
 
-At context, remote pairing is an important part of our workflow. Using a
+At Context, remote pairing is an important part of our workflow. Using a
 common tools and configs enables a smoother remote pairing process.
 
 ## Tools
@@ -13,6 +13,7 @@ common tools and configs enables a smoother remote pairing process.
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
 - [jshint](http://jshint.com/install/) - syntax checking for javascript
 - [powerline fonts](https://powerline.readthedocs.io/en/master/installation.html#installation-on-various-platforms) - Fonts for an awesome vim status bar
+- [vundle](https://github.com/VundleVim/Vundle.vim) - Vim package manager
 
 ## Getting started
 
@@ -23,7 +24,7 @@ common tools and configs enables a smoother remote pairing process.
    personal dotfiles just added this dir to `DOTFILES_DIRS` in your existing
    `.rcrc`. Also, if you aren't using rcm for your personal dotfiles and you
    have personal dotfiles `rcm` is a powerful way to easily manage dotfiles from
-   multiple souces.)
+   multiple sources.)
 ```
 echo 'DOTFILES_DIRS="~/context-dotfiles"' > ~/.rcrc
 ```
@@ -36,6 +37,15 @@ rcup
 ```
 :VundleInstall
 ```
+
+## OSX Specific Instructions
+- You will need to specify the full path to the `context-dotfiles` dir in `.rcrc`
+  so it should look like:
+  ```
+  DOTFILES_DIRS=/Users/peter_pizza/context-dotfiles
+  ```
+- You'll need to install `python` from homebrew, which should install `pip`
+- You'll need to use `pip2` to install python packages (powerline, tmuxp, etc)
 
 ## Basic commands
 
