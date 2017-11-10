@@ -24,3 +24,8 @@ cabbrev Tabc tabc
 " Press Space to turn off highlighting and clear any message already
 " displayed.
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>""
+
+" Copy current file path into paste buffer
+map <Leader>r :let @* = "<C-R>=expand("%")<CR>"<CR>
+" Copy spec filename into paste buffer on save
+au BufWritePost *spec.{js,rb} :let @* = expand("%")
