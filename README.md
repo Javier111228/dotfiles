@@ -48,6 +48,9 @@ rcup
 - You'll need to install `python` from homebrew, which should install `pip`
 - You'll need to use `pip2` to install python packages (powerline, tmuxp, etc)
 
+## Linux specific instructions
+- If you're running a terminal inside of gnome you may want to [follow these directions for getting the paste buffer to work in a sensible way](http://vim.wikia.com/wiki/Accessing_the_system_clipboard).
+
 ## Basic commands
 
 - Start and attach to tmux sessions for admin and api:
