@@ -53,6 +53,12 @@ rcup
 ~/.gitconfig to ~/.gitconfig.local` and then just delete anything you don't need
 anymore after you run rcup.)
 
+1. Add shared aliases, by sourcing the `~/.sh.d/aliases` file in your bash/zsh
+   config
+
+`source ~/.sh.d/aliases`
+
+Optionally add your own aliases to `~/.aliases.local`
 
 ## OSX Specific Instructions
 - You will need to specify the full path to the `context-dotfiles` dir in `.rcrc`

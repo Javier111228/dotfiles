@@ -1,0 +1,16 @@
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias ln='ln -v'
+
+alias gsh='gitsh'
+
+alias b='bundle'
+alias be='bundle exec'
+alias s='bundle exec rspec'
+alias migrate="be rake db:migrate db:rollback && be rake db:migrate db:test:prepare"
+
+alias tp='tmuxp load admin api'
+alias t='tmux attach-session -t admin -t api'
+alias tt='TMUX='"'"''"'"' t'
+
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
