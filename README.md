@@ -39,6 +39,21 @@ rcup
 :VundleInstall
 ```
 
+1. Add your own gitconfigs to `~/.gitconfig.local`
+
+```
+[user]
+  name = Rebecca Meritz
+  email = rebecca@meritz.com
+[gitsh]
+  gitCommand = /usr/bin/hub
+```
+
+(Note: If you are working with exisiting configs you want to might want to `mv
+~/.gitconfig to ~/.gitconfig.local` and then just delete anything you don't need
+anymore after you run rcup.)
+
+
 ## OSX Specific Instructions
 - You will need to specify the full path to the `context-dotfiles` dir in `.rcrc`
   so it should look like:
