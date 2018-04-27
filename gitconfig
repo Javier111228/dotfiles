@@ -23,6 +23,7 @@
   r = reset
   rum = rebase master@{u}
   lum = log ...master@{u}
+  lp = log ...origin/production --left-right --oneline
   f = fetch --all
 [credential]
   helper = cache
