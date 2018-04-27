@@ -11,7 +11,9 @@ common tools and configs enables a smoother remote pairing process.
 - vim - highly configurable text editor
 - [gitsh](https://github.com/thoughtbot/gitsh) - interactive shell for git
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
+- [rubocop](http://rubocop.readthedocs.io/en/latest/) - syntax checking for ruby
 - [jshint](http://jshint.com/install/) - syntax checking for javascript
+- [stylelint](https://stylelint.io/) - syntax checking for scss
 - [powerline fonts](https://powerline.readthedocs.io/en/master/installation.html#installation-on-various-platforms) - Fonts for an awesome vim status bar
 - [ag/the_silver_searcher](https://github.com/ggreer/the_silver_searcher) - for faster in-project searching
 - [vundle](https://github.com/VundleVim/Vundle.vim) - Vim package manager
@@ -109,3 +111,9 @@ to a branch in this repo and create a PR as normal.
 
 You can use `tmuxp load dots` to edit them in a tmux session layed out just for
 this purpose.
+
+# Using other editors
+
+If you plan on using another editor alongside vim ensure you setup the
+appropriate stylechecking plugins using the linters meantioned above in the tool
+list.
