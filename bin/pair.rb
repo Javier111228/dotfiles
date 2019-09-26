@@ -8,14 +8,33 @@ schedule = {
   friday: []
 }
 
-def make_pairs(day, all_pax, schedule)
-  if all_pax.size > 1
-    pax = all_pax
-    p1 = pax.first
-    pax = pax.drop(1)
-    p2 = pax.shuffle!.first
-    schedule[day] << [p1, p2]
-    make_pairs(day, pax.drop(1), schedule)
+pairs = []
+
+def make_pair(pax)
+  p1 = pax.sample
+  p2 = (pax - [p1]).sample
+  [p1, p2].sort
+end
+
+def attempt_to_make_unique_pair(pax, pairs, attemps_left)
+  pair = make_pair(pax)
+  if attemps_left.positive? && pairs.include?(pair)
+    attempt_to_make_unique_pair(pax, pairs, attemps_left - 1)
+  else
+    pairs << pair
+    pair
+  end
+end
+
+def make_unique_pair(pax, pairs)
+  attempt_to_make_unique_pair(pax, pairs, 3)
+end
+
+def make_pairs(day, pax, schedule, pairs)
+  if pax.size > 1
+    pair = make_unique_pair(pax, pairs)
+    schedule[day] << pair
+    make_pairs(day, pax - pair, schedule, pairs)
   end
 end
 
@@ -28,7 +47,7 @@ availabilities = {
 }
 
 availabilities.each do |day, pax|
-  make_pairs(day, pax, schedule)
+  make_pairs(day, pax, schedule, pairs)
 end
 
 schedule.each do |day, pairs|
