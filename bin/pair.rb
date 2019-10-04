@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-monday = %i[brenda caesar erin rebecca shelia]
-tuesday = %i[brenda caesar erin johnny rebecca shelia]
+monday = %i[Caesar erin rebecca sheila]
+tuesday = %i[Caesar erin johnnymukai rebecca sheila wardpenney]
 wednesday = %i[erin rebecca]
-thursday = %i[brenda erin johnny rebecca shelia]
+thursday = %i[erin johnnymukai rebecca sheila]
 friday = %i[]
 
 class PairingScheduleFactory
@@ -65,11 +65,13 @@ class PairingScheduleFactory
   end
 
   def pretty_print
+    puts "*Week #{Time.now.strftime('%V').to_i + 1}*:"
+    puts ""
     schedule.each do |day, day_pairs|
       unless day_pairs.empty?
-        puts day.capitalize.to_s + ':'
+        puts "*#{day.capitalize}*:"
         day_pairs.each_with_index do |pair, i|
-          puts "    Room #{i}: #{pair.first.capitalize} & #{pair.last.capitalize}"
+          puts "    Room #{i}: @#{pair.first} & @#{pair.last}"
         end
         puts ''
       end
