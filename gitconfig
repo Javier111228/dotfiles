@@ -17,6 +17,7 @@
   ca = commit --amend -v
   caa = commit --amend -C HEAD
   p = push
+  pf = push --force-with-lease
   s = status -s
   st = status
   pr = pull-request
