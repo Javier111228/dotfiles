@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$1" -gt 9 ]; then
+  echo '#[fg=black,bg=green]'
+else
+  echo '#[fg=default,bg=cyan]'
+fi
