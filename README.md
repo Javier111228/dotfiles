@@ -6,8 +6,6 @@ common tools and configs enables a smoother remote pairing process.
 ## Tools
 
 - [tmate](https://tmate.io/) - Instant terminal sharing
-- [tmux](https://github.com/tmux/tmux/wiki) - terminal multiplexer
-- [tmuxp](https://tmuxp.git-pull.com/en/latest/) - tmux session manager
 - vim - highly configurable text editor
 - [gitsh](https://github.com/thoughtbot/gitsh) - interactive shell for git
 - [rcm](https://github.com/thoughtbot/rcm) - dotfile management
