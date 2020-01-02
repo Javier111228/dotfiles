@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
-monday = %i[Caesar erin rebecca sheila]
-tuesday = %i[Caesar erin johnnymukai rebecca sheila wardpenney]
-wednesday = %i[erin rebecca]
-thursday = %i[erin johnnymukai rebecca sheila]
-friday = %i[]
+monday = [:erin, :'Brenda Storer']
+tuesday = [:erin, :sheila, :johnnymukai, :'Brenda Storer']
+wednesday = [:erin, :rebecca]
+thursday = [:rebecca, :erin, :sheila, :johnnymukai, :'Brenda Storer']
+friday = [:rebecca, :sheila]
 
 class PairingScheduleFactory
   def initialize(monday:, tuesday:, wednesday:, thursday:, friday:)
@@ -71,7 +71,7 @@ class PairingScheduleFactory
       unless day_pairs.empty?
         puts "*#{day.capitalize}*:"
         day_pairs.each_with_index do |pair, i|
-          puts "    Room #{i}: @#{pair.first} & @#{pair.last}"
+          puts "    Pair #{i + 1}: @#{pair.first} & @#{pair.last}"
         end
         puts ''
       end
