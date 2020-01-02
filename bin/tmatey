@@ -2,47 +2,52 @@
 
 set -x
 
-ROOT="$HOME/api"
+SESSION_NAME=context
+API_ROOT="$HOME/api"
+ADMIN_ROOT="$HOME/admin"
 
 tmate start-server
 
 cd $ROOT
 
-tmate new-session -d -s api -n vim vim
+tmate new-session -d -s context -n vim vim
 
 TMATE_DIR="/tmp/tmate-`id -u`"
 TMATE_SESSION="$TMATE_DIR/`ls -t $TMATE_DIR | head -1`"
 
 # Create other windows.
-tmate -S $TMATE_SESSION new-window -c $ROOT -n gitsh
-tmate -S $TMATE_SESSION new-window -c $ROOT -n sh
-tmate -S $TMATE_SESSION new-window -c $ROOT -n server
-tmate -S $TMATE_SESSION new-window -c $ROOT -n console
-tmate -S $TMATE_SESSION new-window -c $ROOT -n db
-tmate -S $TMATE_SESSION new-window -c $ROOT -n sidekiq
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n gitsh
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n sh
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n server
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n console
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n db
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n sidekiq
 
-# Window "gitsh"
-tmate -S $TMATE_SESSION send-keys -t api:2 gitsh C-m
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 11 -n vim
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 12 -n gitsh
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 13 -n sh
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 14 -n server
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 15 -n console
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 16 -n db
 
-# Window "server"
-tmate -S $TMATE_SESSION send-keys -t api:4 'rails server' C-m
+tmate -S $TMATE_SESSION send-keys -t context:2 gitsh C-m
+tmate -S $TMATE_SESSION send-keys -t context:4 'rails server' C-m
+tmate -S $TMATE_SESSION send-keys -t context:5 'rails console' C-m
+tmate -S $TMATE_SESSION send-keys -t context:6 'rails dbconsole' C-m
+tmate -S $TMATE_SESSION send-keys -t context:7 'bundle exec sidekiq' C-m
 
-# Window "console"
-tmate -S $TMATE_SESSION send-keys -t api:5 'rails console' C-m
+tmate -S $TMATE_SESSION send-keys -t context:11 vim C-m
+tmate -S $TMATE_SESSION send-keys -t context:12 gitsh C-m
+tmate -S $TMATE_SESSION send-keys -t context:13 'rails server -p 3333' C-m
+tmate -S $TMATE_SESSION send-keys -t context:14 'rails console' C-m
+tmate -S $TMATE_SESSION send-keys -t context:15 'rails dbconsole' C-m
 
-# Window "db"
-tmate -S $TMATE_SESSION send-keys -t api:6 'rails dbconsole' C-m
+tmate -S $TMATE_SESSION send-keys -t context:1 'q'
 
-# Window "sidekiq"
-tmate -S $TMATE_SESSION send-keys -t api:7 'bundle exec sidekiq' C-m
+tmate -S $TMATE_SESSION select-window -t context:2
 
-tmate -S $TMATE_SESSION send-keys -t api:1 'q'
-
-tmate -S $TMATE_SESSION select-window -t api:2
-
-tmate -S $TMATE_SESSION attach-session -t api
+tmate -S $TMATE_SESSION attach-session -t context
 
 # attach to already running session if running
-# Add legacy admin as additional windows with special key bindings
 # Start elasticsearch before starting server
 # If server cannot start because of port kill whatever is running on 3000 first
