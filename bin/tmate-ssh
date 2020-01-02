@@ -1,0 +1,3 @@
+#!/bin/sh
+
+tmate show-messages | awk '/ssh session:/{print $10}'

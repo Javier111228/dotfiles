@@ -36,12 +36,12 @@ tmate -S $TMATE_SESSION send-keys -t api:6 'rails dbconsole' C-m
 # Window "sidekiq"
 tmate -S $TMATE_SESSION send-keys -t api:7 'bundle exec sidekiq' C-m
 
+tmate -S $TMATE_SESSION send-keys -t api:1 'q'
+
 tmate -S $TMATE_SESSION select-window -t api:2
 
 tmate -S $TMATE_SESSION attach-session -t api
 
-# Show ssh
-# Check ride of annoying text you have to quit on startup
 # attach to already running session if running
 # Add legacy admin as additional windows with special key bindings
 # Start elasticsearch before starting server
