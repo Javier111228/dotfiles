@@ -30,35 +30,35 @@ common tools and configs enables a smoother remote pairing process.
 echo 'DOTFILES_DIRS="~/context-dotfiles"' > ~/.rcrc
 ```
 1. Install the dotfiles
-```
-rcup
-```
+    ```
+    rcup
+    ```
 1. Install Vim Plugins
 
-```
-:VundleInstall
-```
+    ```
+    :VundleInstall
+    ```
 
 1. Add your own gitconfigs to `~/.gitconfig.local`
 
-```
-[user]
-  name = Rebecca Meritz
-  email = rebecca@meritz.com
-[gitsh]
-  gitCommand = /usr/bin/hub
-```
+    ```
+    [user]
+      name = Rebecca Meritz
+      email = rebecca@meritz.com
+    [gitsh]
+      gitCommand = /usr/bin/hub
+    ```
 
-(Note: If you are working with exisiting configs you want to might want to `mv
-~/.gitconfig to ~/.gitconfig.local` and then just delete anything you don't need
-anymore after you run rcup.)
+    (Note: If you are working with exisiting configs you want to might want to `mv
+    ~/.gitconfig to ~/.gitconfig.local` and then just delete anything you don't need
+    anymore after you run rcup.)
 
 1. Add shared aliases, by sourcing the `~/.sh.d/aliases` file in your bash/zsh
    config
 
-`source ~/.sh.d/aliases`
+    `source ~/.sh.d/aliases`
 
-Optionally add your own aliases to `~/.aliases.local`
+    Optionally add your own aliases to `~/.aliases.local`
 
 ## OSX Specific Instructions
 - You will need to specify the full path to the `context-dotfiles` dir in `.rcrc`
@@ -74,11 +74,9 @@ Optionally add your own aliases to `~/.aliases.local`
 
 ## Basic commands
 
-- Start and attach to tmux sessions for admin and api:
-  `tmuxp load admin api`
-
-- Attach to already existing api and admin sessions:
-  `tmux attach-session -t admin -t api`
+- Start and attach to tmate session: `tmatey`
+- Deattach from a tmate session `C-b d`
+- Kill from a tmate session `C-b K`
 
 ## Vim Configs
 
@@ -92,11 +90,11 @@ file or adding a new file and commiting it to this repo.
 ## Update your local dotfiles
 
 1. Pull the lastest changes to this repo
- `cd ~/context-dotfile; git pull origin master`
+    `cd ~/context-dotfile; git pull origin master`
 1. Run rcup
-  `rcup`
+     `rcup`
 1. Install the lastest plugins in vim
-  `:VundleInstall`
+     `:VundleInstall`
 
 ## Contributing to dotfiles
 
