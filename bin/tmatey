@@ -2,6 +2,7 @@
 
 set -x
 
+TMATE_DIR="/tmp/tmate-`id -u`"
 SESSION_NAME=context
 API_ROOT="$HOME/api"
 ADMIN_ROOT="$HOME/admin"
@@ -10,9 +11,15 @@ tmate start-server
 
 cd $ROOT
 
+for socket in $TMATE_DIR/*; do
+  if tmate -S $socket has-session -t $SESSION_NAME 2> /dev/null; then
+    tmate -S $socket attach-session -t $SESSION_NAME
+    return
+  fi
+done
+
 tmate new-session -d -s context -n vim vim
 
-TMATE_DIR="/tmp/tmate-`id -u`"
 TMATE_SESSION="$TMATE_DIR/`ls -t $TMATE_DIR | head -1`"
 
 # Create other windows.
@@ -48,6 +55,8 @@ tmate -S $TMATE_SESSION select-window -t context:2
 
 tmate -S $TMATE_SESSION attach-session -t context
 
-# attach to already running session if running
+# cleanup after ourselves when session dies
+# Make sure rc up doesn't f my computer
+# make sure rc up fixing displaying ssh status
 # Start elasticsearch before starting server
 # If server cannot start because of port kill whatever is running on 3000 first
