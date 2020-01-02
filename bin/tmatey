@@ -40,18 +40,16 @@ tmate -S $TMATE_SESSION send-keys -t context:1 'q'
 tmate -S $TMATE_SESSION send-keys -t context:1 vim C-m
 
 tmate -S $TMATE_SESSION send-keys -t context:2 gitsh C-m
-tmate -S $TMATE_SESSION send-keys -t context:4 'rails server' C-m
+tmate -S $TMATE_SESSION send-keys -t context:4 "kill-port 3000 && rails server" C-m
 tmate -S $TMATE_SESSION send-keys -t context:5 'rails console' C-m
 tmate -S $TMATE_SESSION send-keys -t context:6 'rails dbconsole' C-m
 tmate -S $TMATE_SESSION send-keys -t context:7 'bundle exec sidekiq' C-m
 
 tmate -S $TMATE_SESSION send-keys -t context:11 vim C-m
 tmate -S $TMATE_SESSION send-keys -t context:12 gitsh C-m
-tmate -S $TMATE_SESSION send-keys -t context:13 'rails server -p 3333' C-m
-tmate -S $TMATE_SESSION send-keys -t context:14 'rails console' C-m
-tmate -S $TMATE_SESSION send-keys -t context:15 'rails dbconsole' C-m
-
-tmate -S $TMATE_SESSION send-keys -t context:1 'q'
+tmate -S $TMATE_SESSION send-keys -t context:14 "kill-port 3333 && rails server -p 3333" C-m
+tmate -S $TMATE_SESSION send-keys -t context:15 'rails console' C-m
+tmate -S $TMATE_SESSION send-keys -t context:16 'rails dbconsole' C-m
 
 tmate -S $TMATE_SESSION select-window -t context:2
 
