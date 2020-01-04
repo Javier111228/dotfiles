@@ -26,6 +26,7 @@ common tools and configs enables a smoother remote pairing process.
    `.rcrc`. Also, if you aren't using rcm for your personal dotfiles and you
    have personal dotfiles `rcm` is a powerful way to easily manage dotfiles from
    multiple sources.)
+1. Ensure `~/.bin` is added to your `$PATH`
 ```
 echo 'DOTFILES_DIRS="~/context-dotfiles"' > ~/.rcrc
 ```
@@ -75,9 +76,9 @@ echo 'DOTFILES_DIRS="~/context-dotfiles"' > ~/.rcrc
 ## Basic commands
 
 - Start and attach to tmate session: `tmatey`
-- Switch to an `api` window with `C-b 1`, 'C-b 2', etc.
-- Switch to an `admin` window with `C-b F1`, 'C-b F2', etc.
-- Switch to an `WithContext` window with `C-n 1`, 'C-n 2', etc.
+- Switch to an `api` window with `C-b 1`, `C-b 2`, etc.
+- Switch to an `admin` window with `C-b F1`, `C-b F2`, etc.
+- Switch to an `WithContext` window with `C-n 1`, `C-n 2`, etc.
 - Deattach from a tmate session `C-b d`
 - Kill from a tmate session `C-b K`
 

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ "$1" -eq 1 ]; then
+  PREFIX='[api] '
+elif [ "$1" -eq 11 ]; then
+  PREFIX='[admin] '
+elif [ "$1" -eq 21 ]; then
+  PREFIX='[with] '
+else
+  PREFIX=''
+fi
+
+if [ "$1" -gt 20 ]; then
+  INDEX_DISPLAY="n$(($1 - 20))"
+elif [ "$1" -gt 10 ]; then
+  INDEX_DISPLAY="F$(($1 - 10))"
+else
+  INDEX_DISPLAY='#I'
+fi
+
+echo "$PREFIX$INDEX_DISPLAY:#W#F"
