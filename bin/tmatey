@@ -5,6 +5,7 @@ TMATE_DIR="/tmp/tmate-`id -u`"
 SESSION_NAME=context
 API_ROOT="$HOME/api"
 ADMIN_ROOT="$HOME/admin"
+WITH_CONTEXT_ROOT="$HOME/WithContext"
 
 tmate start-server
 
@@ -17,28 +18,34 @@ for socket in $TMATE_DIR/*; do
   fi
 done
 
-tmate new-session -d -c $API_ROOT -s context -n vim
+tmate new-session -d -c $API_ROOT -s context -n v
 
 TMATE_SESSION="$TMATE_DIR/`ls -t $TMATE_DIR | head -1`"
 
 # Create other windows.
-tmate -S $TMATE_SESSION new-window -c $API_ROOT -n gitsh
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n gsh
 tmate -S $TMATE_SESSION new-window -c $API_ROOT -n sh
-tmate -S $TMATE_SESSION new-window -c $API_ROOT -n server
-tmate -S $TMATE_SESSION new-window -c $API_ROOT -n console
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n s
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n c
 tmate -S $TMATE_SESSION new-window -c $API_ROOT -n db
-tmate -S $TMATE_SESSION new-window -c $API_ROOT -n sidekiq
+tmate -S $TMATE_SESSION new-window -c $API_ROOT -n sq
 
-tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 11 -n vim
-tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 12 -n gitsh
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 11 -n v
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 12 -n gsh
 tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 13 -n sh
-tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 14 -n server
-tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 15 -n console
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 14 -n s
+tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 15 -n c
 tmate -S $TMATE_SESSION new-window -c $ADMIN_ROOT -t 16 -n db
+
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 21 -n v
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 22 -n gsh
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 23 -n sh
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 24 -n s
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 25 -n c
+tmate -S $TMATE_SESSION new-window -c $WITH_CONTEXT_ROOT -t 26 -n db
 
 tmate -S $TMATE_SESSION send-keys -t context:1 'q'
 tmate -S $TMATE_SESSION send-keys -t context:1 vim C-m
-
 tmate -S $TMATE_SESSION send-keys -t context:2 gitsh C-m
 tmate -S $TMATE_SESSION send-keys -t context:4 "kill-port 3000 && rails server" C-m
 tmate -S $TMATE_SESSION send-keys -t context:5 'rails console' C-m
@@ -50,6 +57,12 @@ tmate -S $TMATE_SESSION send-keys -t context:12 gitsh C-m
 tmate -S $TMATE_SESSION send-keys -t context:14 "kill-port 3333 && rails server -p 3333" C-m
 tmate -S $TMATE_SESSION send-keys -t context:15 'rails console' C-m
 tmate -S $TMATE_SESSION send-keys -t context:16 'rails dbconsole' C-m
+
+tmate -S $TMATE_SESSION send-keys -t context:21 vim C-m
+tmate -S $TMATE_SESSION send-keys -t context:22 gitsh C-m
+tmate -S $TMATE_SESSION send-keys -t context:24 "kill-port 3131 && rails server -p 3131" C-m
+tmate -S $TMATE_SESSION send-keys -t context:25 'rails console' C-m
+tmate -S $TMATE_SESSION send-keys -t context:26 'rails dbconsole' C-m
 
 tmate -S $TMATE_SESSION select-window -t context:2
 
