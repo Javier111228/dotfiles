@@ -1,11 +1,11 @@
 #!/bin/sh
 
 if [ "$1" -gt 20 ]; then
-  COLOR='default'
+  COLOR='magenta'
 elif [ "$1" -gt 10 ]; then
   COLOR='black'
 else
-  COLOR='default'
+  COLOR='magenta'
 fi
 
 echo "#[fg=$COLOR]"
