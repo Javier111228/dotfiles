@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
-monday = [:erin, :'Brenda Storer']
-tuesday = [:erin, :sheila, :johnnymukai, :'Brenda Storer']
+monday = [:erin, :sheila, :rebecca]
+tuesday = [:erin, :sheila, :johnnymukai, :brenda, :rebecca]
 wednesday = [:erin, :rebecca]
-thursday = [:rebecca, :erin, :sheila, :johnnymukai, :'Brenda Storer']
-friday = [:rebecca, :sheila]
+thursday = [:rebecca, :erin, :sheila, :johnnymukai, :brenda]
+friday = []
 
 class PairingScheduleFactory
   def initialize(monday:, tuesday:, wednesday:, thursday:, friday:)
