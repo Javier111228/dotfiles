@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" -gt 20 ]; then
+  COLOR='green'
+elif [ "$1" -gt 10 ]; then
+  COLOR='yellow'
+else
+  COLOR='red'
+fi
+
+echo "bg=$COLOR"
