@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-monday = [:erin, :sheila, :rebecca]
+monday = [:erin, :sheila, :rebecca, :brenda]
 tuesday = [:erin, :sheila, :johnnymukai, :brenda, :rebecca]
 wednesday = [:erin, :rebecca]
 thursday = [:rebecca, :erin, :sheila, :johnnymukai, :brenda]
